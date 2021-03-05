@@ -20,6 +20,7 @@ module LibrarySystem
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+    config.autoload_paths << Rails.root.join('app', 'api')
+    # config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
   end
 end

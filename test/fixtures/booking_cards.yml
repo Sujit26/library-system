@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  previousStock: 1
-  newStock: 1
+  user: one
   book: one
+  renew_date: MyString
+  return_date: MyString
 
 two:
-  previousStock: 1
-  newStock: 1
+  user: two
   book: two
+  renew_date: MyString
+  return_date: MyString

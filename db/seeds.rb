@@ -6,15 +6,41 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Librarian creation"
+
+User.create!(   
+        name: "admin",
+        email: "admin@gmail.com",
+        password: "admin",
+        is_librarian: true,
+        fine: 0,
+        )
+
+
+puts "Users creation"
 15.times do
-    Book.create!( isbn: Faker::Number.number(4),  title: Faker::Superhero.power,  stock: Faker::Number.between(2, 19))
+    User.create!(   
+        name: Faker::Name.name,
+        email: Faker::Internet.email,
+        password: "12321",
+        is_librarian: false,
+        fine: Faker::Number.between(0, 15)
+        )
 end
 
-book_ids = Book.ids
-
-95.times do Flow.create!(
-    book_id: book_ids.sample, 
-    newStock: Faker::Number.between(2, 15), 
-    previousStock:  Faker::Number.between(2, 15)
+puts "Books creation"
+10.times do  
+    title =Faker::Superhero.power;
+    authur =Faker::Name.name;
+    description= Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4);
+    batch = Faker::Number.between(from: 1, to: 10)
+    5.times do Book.create!(
+        title: title,
+        authur:authur,
+        description:description,
+        batch_number:batch,
     )
+    end
 end
+
+

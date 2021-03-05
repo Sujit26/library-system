@@ -1,0 +1,2 @@
+class BookingCardsController < ApplicationController
+end
